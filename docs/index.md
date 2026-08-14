@@ -10,11 +10,51 @@ Kontinua combines state-of-the-art neural PDE operators (FNO, CNextU-Net, AViT) 
 
 > **Academic Origins**: Kontinua's 15TB dataset is powered by **The Well**, originally developed by the [Polymathic AI](https://polymathic-ai.org/) organization. We are proud to build upon their open-source research and dual-license our SDK under the Apache 2.0 license.
 
-<figure style="border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.45), 0 0 60px rgba(79,142,255,0.18);">
-    <video allowfullscreen="true" autoplay loop muted playsinline style="width: 100%; display: block;">
-        <source src="assets/videos/background.mp4" type="video/mp4">
-    </video>
-</figure>
+<div class="sim-card">
+  <div class="sim-card__header">
+    <div class="sim-card__meta">
+      <span class="sim-pill sim-pill--active">Compressible Turbulence · 2D Vorticity Field ($\omega$)</span>
+      <span class="sim-pill">Resolution: 512×512</span>
+      <span class="sim-pill sim-pill--gold">VRMSE: 0.021 (SOTA)</span>
+    </div>
+    <div class="sim-card__controls">
+      <button class="btn--ghost" id="sim-play-toggle">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" id="sim-play-icon"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+        <span id="sim-play-text">Pause Rollout</span>
+      </button>
+      <button class="btn--ghost" id="sim-reset-btn">Reset Step</button>
+    </div>
+  </div>
+
+  <div class="sim-display">
+    <div class="sim-view">
+      <div class="sim-view__tag sim-view__tag--hpc">Traditional HPC Solver (Navier-Stokes)</div>
+      <canvas class="sim-canvas" id="canvasHPC" width="400" height="240"></canvas>
+      <div class="sim-view__footer">
+        <span>Compute Time: <strong>48.2 Hours</strong></span>
+        <span>Cost: <strong>$145.00 (64 CPU cores)</strong></span>
+      </div>
+    </div>
+
+    <div class="sim-divider" aria-hidden="true">
+      <span class="sim-divider__vs">VS</span>
+    </div>
+
+    <div class="sim-view sim-view--ai">
+      <div class="sim-view__tag sim-view__tag--ai">Kontinua Neural Surrogate (CNextU-Net)</div>
+      <canvas class="sim-canvas" id="canvasAI" width="400" height="240"></canvas>
+      <div class="sim-view__footer">
+        <span>Inference Time: <strong class="tok-best">47 Milliseconds</strong></span>
+        <span>Cost: <strong class="tok-best">$0.01 / prediction</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sim-timeline">
+    <label for="sim-scrubber" class="sim-timeline__label">Rollout Timeline: <span id="sim-step-val">Step t=42 / 100</span></label>
+    <input type="range" min="0" max="100" value="42" class="sim-scrubber" id="sim-scrubber" />
+  </div>
+</div>
 
 ## Using the Kontinua SDK
 
