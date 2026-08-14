@@ -1,15 +1,17 @@
 
 
-# Kontinua: The Open-Core Physics AI Platform
+# Kontinua: The Open-Source Foundation for Physics AI
+
+**1,000× Faster than Traditional Solvers.**
 
 Welcome to **Kontinua**, the definitive open-source SDK and managed cloud platform for training, benchmarking, and deploying foundation models for physics. 
 
-Kontinua provides seamless access to 15TB of curated, analysis-ready simulation data across 16 physical domains—including biological systems, fluid dynamics, acoustic scattering, and magneto-hydrodynamics. Whether you are building surrogate models locally or orchestrating massive distributed training jobs on **Kontinua Cloud**, our platform provides the tools you need.
+Kontinua combines state-of-the-art neural PDE operators (FNO, CNextU-Net, AViT) with a managed low-latency GPU cloud. Train locally on your hardware with our Apache 2.0 open-source code on 15TB of curated, analysis-ready simulation data across 16 physical domains, or scale to millisecond multi-physics inference with Kontinua Cloud.
 
 > **Academic Origins**: Kontinua's 15TB dataset is powered by **The Well**, originally developed by the [Polymathic AI](https://polymathic-ai.org/) organization. We are proud to build upon their open-source research and dual-license our SDK under the Apache 2.0 license.
 
-<figure>
-    <video allowfullscreen="true" autoplay loop>
+<figure style="border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.45), 0 0 60px rgba(79,142,255,0.18);">
+    <video allowfullscreen="true" autoplay loop muted playsinline style="width: 100%; display: block;">
         <source src="assets/videos/background.mp4" type="video/mp4">
     </video>
 </figure>
