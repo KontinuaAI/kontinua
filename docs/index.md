@@ -19,7 +19,7 @@ Welcome to the Well, a large-scale collection of machine learning datasets conta
 Once the Well package installed and the data downloaded you can use them in your training pipeline.
 
 ```python
-from the_well.data import WellDataset
+from kontinua.data import WellDataset
 from torch.utils.data import DataLoader
 
 trainset = WellDataset(
@@ -50,16 +50,16 @@ source path/to/env/activate/bin
 The Well package can be installed directly from PyPI.
 
 ```
-pip install the_well
+pip install kontinua
 ```
 
 #### From Source
 
-It can also be installed from source. For this, clone the [repository](https://github.com/PolymathicAI/the_well) and install the package with its dependencies.
+It can also be installed from source. For this, clone the [repository](https://github.com/KontinuaAI/kontinua) and install the package with its dependencies.
 
 ```
-git clone https://github.com/PolymathicAI/the_well
-cd the_well
+git clone https://github.com/KontinuaAI/kontinua
+cd kontinua
 pip install .
 ```
 
@@ -76,17 +76,17 @@ to install the dependencies built for CUDA 12.1.
 If you want to run the benchmarks, you should install additional dependencies.
 
 ```
-pip install the_well[benchmark]
+pip install kontinua[benchmark]
 ```
 
 ### Downloading the Data
 
 The Well datasets range between 6.9GB and 5.1TB of data each, for a total of 15TB for the full collection. Ensure that your system has enough free disk space to accomodate the datasets you wish to download.
 
-Once `the_well` is installed, you can use the `the-well-download` command to download any dataset of The Well.
+Once `the_well` is installed, you can use the `kontinua-download` command to download any dataset of The Well.
 
 ```
-the-well-download --base-path path/to/base --dataset active_matter --split train
+kontinua-download --base-path path/to/base --dataset active_matter --split train
 ```
 
 If `--dataset` and `--split` are omitted, all datasets and splits will be downloaded. This could take a while!
@@ -96,7 +96,7 @@ If `--dataset` and `--split` are omitted, all datasets and splits will be downlo
 Most of the Well datasets are also hosted on [Hugging Face](https://huggingface.co/polymathic-ai). Data can be streamed directly from the hub using the following code.
 
 ```python
-from the_well.data import WellDataset
+from kontinua.data import WellDataset
 from torch.utils.data import DataLoader
 
 # The following line may take a couple of minutes to instantiate the datamodule
@@ -115,17 +115,17 @@ For better performance in large training, we advise [downloading the data locall
 
 ## Benchmark
 
-The repository allows benchmarking surrogate models on the different datasets that compose the Well. Some state-of-the-art models are already implemented in [`models`](https://github.com/PolymathicAI/the_well/tree/master/the_well/benchmark/models), while [dataset classes](https://github.com/PolymathicAI/the_well/tree/master/the_well/data) handle the raw data of the Well.
-The benchmark relies on [a training script](https://github.com/PolymathicAI/the_well/tree/master/the_well/benchmark/train.py) that uses [hydra](https://hydra.cc/) to instantiate various classes (e.g. dataset, model, optimizer) from [configuration files](https://github.com/PolymathicAI/the_well/tree/master/the_well/benchmark/configs).
+The repository allows benchmarking surrogate models on the different datasets that compose the Well. Some state-of-the-art models are already implemented in [`models`](https://github.com/KontinuaAI/kontinua/tree/master/kontinua/benchmark/models), while [dataset classes](https://github.com/KontinuaAI/kontinua/tree/master/the_well/data) handle the raw data of the Well.
+The benchmark relies on [a training script](https://github.com/KontinuaAI/kontinua/tree/master/kontinua/benchmark/train.py) that uses [hydra](https://hydra.cc/) to instantiate various classes (e.g. dataset, model, optimizer) from [configuration files](https://github.com/KontinuaAI/kontinua/tree/master/kontinua/benchmark/configs).
 
 For instance, to run the training script of default FNO architecture on the active matter dataset, launch the following commands:
 
 ```bash
-cd the_well/benchmark
+cd kontinua/benchmark
 python train.py experiment=fno server=local data=active_matter
 ```
 
-Each argument corresponds to a specific configuration file. In the command above `server=local` indicates the training script to use [`local.yaml`](https://github.com/PolymathicAI/the_well/tree/master/the_well/benchmark/configs/server/local.yaml), which just declares the relative path to the data. The configuration can be overridden directly or edited with new YAML files. Please refer to [hydra documentation](https://hydra.cc/) for editing configuration.
+Each argument corresponds to a specific configuration file. In the command above `server=local` indicates the training script to use [`local.yaml`](https://github.com/KontinuaAI/kontinua/tree/master/kontinua/benchmark/configs/server/local.yaml), which just declares the relative path to the data. The configuration can be overridden directly or edited with new YAML files. Please refer to [hydra documentation](https://hydra.cc/) for editing configuration.
 
 You can use this command within a sbatch script to launch the training with Slurm.
 
@@ -152,11 +152,11 @@ For questions regarding this project, please contact [Ruben Ohana](https://ruben
 
 ## Bug Reports and Feature Requests
 
-To report a bug (in the data or the code), request a feature or simply ask a question, you can [open an issue](https://github.com/PolymathicAI/the_well/issues) on the [repository](https://github.com/PolymathicAI/the_well).
+To report a bug (in the data or the code), request a feature or simply ask a question, you can [open an issue](https://github.com/KontinuaAI/kontinua/issues) on the [repository](https://github.com/KontinuaAI/kontinua).
 
 ## Useful Links
 
-- :fontawesome-brands-github: The Well repository on [GitHub](https://github.com/PolymathicAI/the_well)
+- :fontawesome-brands-github: The Well repository on [GitHub](https://github.com/KontinuaAI/kontinua)
 - :simple-arxiv: More information about the Well in the [NeurIPS paper](https://arxiv.org/abs/2412.00568)
 - :fontawesome-solid-at: More about our work on the [Polymathic AI website](https://polymathic-ai.org/)
 - :hugging: Datasets of the Well are available on [Hugging Face](https://huggingface.co/polymathic-ai)

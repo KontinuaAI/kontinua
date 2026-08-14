@@ -9,7 +9,7 @@ We emphasize that these settings are not selected to explore peak performance of
 Most of the checkpoints of the models are available on [Hugging Face](https://huggingface.co/collections/polymathic-ai/the-well-benchmark-models-67e69bd7cd8e60229b5cd43e). To load a specific checkpoint follow the example below of the FNO model trained on the `active_matter` dataset.
 
 ```python
-from the_well.benchmark.models import FNO
+from kontinua.benchmark.models import FNO
 
 model = FNO.from_pretrained("polymathic-ai/FNO-active_matter")
 ```
