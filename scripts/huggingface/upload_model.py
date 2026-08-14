@@ -80,7 +80,7 @@ def main(cfg: DictConfig):
 
     dataset_name = str(cfg.data.well_dataset_name)
     model_name = model.__class__.__name__
-    repo_id = f"polymathic-ai/{model_name}-{dataset_name}"
+    repo_id = f"KontinuaAI/{model_name}-{dataset_name}"
     model_card_kwargs = build_model_card_kwargs(model, dataset_name)
     # Upload model with HF formalism
     model.push_to_hub(repo_id=repo_id, model_card_kwargs=model_card_kwargs)
