@@ -1,8 +1,4 @@
-<div align="center">
-    <img src="assets/images/the_well_color.svg" width="60%"/>
-</div>
 
-<br>
 
 # Kontinua: The Open-Core Physics AI Platform
 
