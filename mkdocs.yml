@@ -1,8 +1,9 @@
-site_name: The Well
+site_name: Kontinua
+site_url: https://docs.kontinua-ai.com
 theme:
   name: material
   palette:
-    scheme: the_well
+    scheme: slate
   features:
     - content.code.copy
     - navigation.tabs
@@ -47,23 +48,21 @@ nav:
     - viscoelastic_instability: datasets/viscoelastic_instability.md
     - viscoelastic_instability_v2: datasets/viscoelastic_instability_v2.md
   - Data Format: data_format.md
-  - Data Visualization: "https://huggingface.co/spaces/polymathic-ai/TheWell"
+  - Data Visualization: "https://huggingface.co/spaces/KontinuaAI/Kontinua"
   - API: api.md
   - Benchmarks: benchmarks.md
-  - FAQ: "https://github.com/PolymathicAI/the_well/discussions/categories/q-a?discussions_q=category%3AQ%26A+"
+  - FAQ: "https://github.com/KontinuaAI/kontinua/discussions/categories/q-a?discussions_q=category%3AQ%26A+"
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/PolymathicAI/the_well
+      link: https://github.com/KontinuaAI/kontinua
     - icon: simple/arxiv
       link: https://arxiv.org/abs/2412.00568
     - icon: fontawesome/solid/at
-      link: https://polymathic-ai.org/
-    - icon: fontawesome/brands/x-twitter
-      link: https://twitter.com/PolymathicAI
-copyright: Copyright &copy; 2024 Polymathic AI
-repo_url: https://github.com/PolymathicAI/the_well
-repo_name: the_well
+      link: https://kontinua-ai.com/
+copyright: Copyright &copy; 2024 Kontinua
+repo_url: https://github.com/KontinuaAI/kontinua
+repo_name: kontinua
 
 extra_css:
   - https://unpkg.com/katex@0/dist/katex.min.css
@@ -93,6 +92,6 @@ plugins:
       handlers:
         python:
           paths:
-            the_well/
+            kontinua/
           options:
             docstring_style: google
