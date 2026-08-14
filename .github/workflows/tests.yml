@@ -26,6 +26,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install -e ".[dev,benchmark]"
         
+    - name: Lint with ruff
+      run: |
+        ruff check .
+        
     - name: Test with pytest
       run: |
         pytest tests/
