@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════
-   SimForge — main.js
+   Kontinua — main.js
    Canvas particle field · Scroll reveals · Stat counters
    Sticky nav · Waitlist form
 ═══════════════════════════════════════════════════════ */

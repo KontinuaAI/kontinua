@@ -1,4 +1,4 @@
-# SimForge — Physics AI Surrogate Modeling Platform
+# Kontinua — Physics AI Surrogate Modeling Platform
 
 **Executive Strategy & Production-Ready Architecture Document**
 **Prepared: August 2026 | Classification: Executive Review**
@@ -46,7 +46,7 @@ mindmap
 
 ---
 
-#### Concept A: **SimForge** — Physics AI Surrogate Modeling Platform (SaaS + API)
+#### Concept A: **Kontinua** — Physics AI Surrogate Modeling Platform (SaaS + API)
 
 **Value prop:** Replace $100K+ HPC simulation campaigns with $10–$1,000 AI-powered predictions in seconds.
 
@@ -73,12 +73,12 @@ mindmap
 
 ---
 
-### 1.4 Recommended Concept: SimForge (Concept A)
+### 1.4 Recommended Concept: Kontinua (Concept A)
 
 > [!IMPORTANT]
-> **SimForge is the clear winner.** Here's the decision matrix:
+> **Kontinua is the clear winner.** Here's the decision matrix:
 
-| Criterion | SimForge (A) | PhysicsMLOps (B) | DataHub (C) |
+| Criterion | Kontinua (A) | PhysicsMLOps (B) | DataHub (C) |
 |-----------|:---:|:---:|:---:|
 | Revenue scalability | ⬛⬛⬛⬛⬛ | ⬛⬛⬛◻◻ | ⬛⬛◻◻◻ |
 | Moat depth (model IP + data) | ⬛⬛⬛⬛⬛ | ⬛⬛⬛◻◻ | ⬛⬛◻◻◻ |
@@ -87,11 +87,11 @@ mindmap
 | Time-to-first-revenue | ⬛⬛⬛⬛◻ | ⬛⬛⬛◻◻ | ⬛⬛⬛⬛◻ |
 | Competitive defensibility (2026 landscape) | ⬛⬛⬛⬛◻ | ⬛⬛◻◻◻ | ⬛◻◻◻◻ |
 
-**Why SimForge wins:**
+**Why Kontinua wins:**
 
 1. **Cloud/Data architecture is the core differentiator.** Your CTO-level expertise in AWS/Azure/GCP enterprise architecture directly maps to building the most critical competitive moat: a low-latency, multi-region inference platform with intelligent model routing — exactly what PhysicsX and Ansys SimAI are struggling to scale.
 
-2. **Usage-based API billing creates compounding revenue.** Every prediction generates revenue. As customers integrate SimForge into their design loops, switching costs compound — this is the Twilio/Stripe playbook applied to physics simulation.
+2. **Usage-based API billing creates compounding revenue.** Every prediction generates revenue. As customers integrate Kontinua into their design loops, switching costs compound — this is the Twilio/Stripe playbook applied to physics simulation.
 
 3. **The 15TB corpus is a non-replicable head start.** While competitors would need years and millions to curate equivalent multi-physics training data, The Well's BSD license gives you immediate, legal access to train superior models.
 
@@ -360,7 +360,7 @@ graph TD
 | Channel | Strategy | CAC Target |
 |---------|----------|-----------|
 | **1. Developer Relations & Content** | Technical blog posts, arXiv papers, HuggingFace model cards, conference talks (NeurIPS, ICLR). Leverage the NeurIPS 2024 publication as credibility anchor. | $50–$200 |
-| **2. Open Benchmarking Leaderboard** | Free public leaderboard ("MLPerf for Physics AI") using the [evaluation suite](file:///Users/aakashpavale/Documents/AI/the_well/the_well/benchmark/metrics). Drives organic traffic + positions SimForge as the standard. | $0–$50 |
+| **2. Open Benchmarking Leaderboard** | Free public leaderboard ("MLPerf for Physics AI") using the [evaluation suite](file:///Users/aakashpavale/Documents/AI/the_well/the_well/benchmark/metrics). Drives organic traffic + positions Kontinua as the standard. | $0–$50 |
 | **3. Strategic Consulting (Land)** | $20K–$100K consulting engagements with aerospace/energy companies. Deliver custom surrogate models, then upsell to platform subscription. | Negative CAC (revenue-generating) |
 | **4. Academic Partnerships** | Free/discounted access for university labs. PhD students become tomorrow's enterprise buyers. Partner with Polymathic AI's network (Flatiron, NYU, Cambridge). | $0–$100 |
 | **5. Vertical-Specific Sales** | Direct outreach to CFD teams at Boeing, Lockheed, Shell, GE. Position as "reduce your Ansys Fluent bill by 80%." | $5K–$20K (enterprise) |
@@ -530,7 +530,7 @@ gantt
 | **Multi-architecture selection** | Choose from FNO, TFNO, CNextU-Net, AViT per prediction job |
 | **Batch prediction API** | Submit 1,000+ prediction requests, async processing, webhook notification |
 | **Public benchmarking leaderboard** | Community submits models, evaluated against Well metrics suite |
-| **SDK (Python)** | `pip install simforge` — 5-line prediction from any Python environment |
+| **SDK (Python)** | `pip install kontinua` — 5-line prediction from any Python environment |
 | **Rollout predictions** | Multi-step temporal evolution (not just single-step) |
 | **Team management** | Multi-seat orgs, RBAC, shared model registry |
 
@@ -540,7 +540,7 @@ gantt
 journey
     title Customer Onboarding Journey
     section Discovery
-      Find SimForge via blog/conference: 5: Prospect
+      Find Kontinua via blog/conference: 5: Prospect
       View public leaderboard: 4: Prospect
       Try free tier (100 predictions): 5: Free User
     section Activation
@@ -731,7 +731,7 @@ graph TB
 >
 > 4. **Funding strategy:** The plan is bootstrappable through Phase 1 (~$1.4K/mo infra + consulting revenue). At what point would you consider raising external capital, and does that affect Phase 2 timeline?
 >
-> 5. **Brand and naming:** "SimForge" is the working name from the analysis report. Do you want to proceed with this, or explore alternatives before any public-facing work begins?
+> 5. **Brand and naming:** "Kontinua" is the working name from the analysis report. Do you want to proceed with this, or explore alternatives before any public-facing work begins?
 
 ## Open Questions
 

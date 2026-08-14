@@ -1,4 +1,4 @@
-# SimForge — Solo Founder Execution & Funding Playbook
+# Kontinua — Solo Founder Execution & Funding Playbook
 
 **The practical guide to going from 1 person to a funded team**
 

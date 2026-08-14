@@ -48,7 +48,7 @@ Covering: acoustic scattering, active biological matter, convective stellar enve
 ### 🟢 Tier 1 — High Feasibility / Near-Term Revenue
 
 #### 1. Physics AI Surrogate Modeling Platform (SaaS)
-**"SimForge" — Replace expensive HPC simulations with AI predictions**
+**"Kontinua" — Replace expensive HPC simulations with AI predictions**
 * **What**: Build a cloud platform where engineers upload boundary conditions/initial states and get predictions 1000× faster than traditional solvers
 * **Revenue model**: Usage-based pricing ($0.01–$1.00 per prediction), tiered subscriptions
 * **Target customers**: Aerospace (CFD), energy (turbulence), defense, automotive
