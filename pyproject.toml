@@ -55,8 +55,8 @@ classifiers = [
 ]
 
 [project.urls]
-documentation = "https://docs.kontinua.ai"
-organization = "https://kontinua.ai"
+documentation = "https://docs.kontinua-ai.com"
+organization = "https://kontinua-ai.com"
 source = "https://github.com/kontinua/kontinua"
 tracker = "https://github.com/kontinua/kontinua/issues"
 

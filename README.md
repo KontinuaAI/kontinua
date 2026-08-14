@@ -10,7 +10,7 @@
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![PyPI](https://img.shields.io/pypi/v/kontinua)](https://pypi.org/project/kontinua/)
-[![Docs](https://img.shields.io/badge/docs-kontinua.ai-indigo)](https://docs.kontinua.ai)
+[![Docs](https://img.shields.io/badge/docs-kontinua--ai.com-indigo)](https://docs.kontinua-ai.com)
 [![arXiv](https://img.shields.io/badge/arXiv-2412.00568-b31b1b.svg)](https://arxiv.org/abs/2412.00568)
 [![NeurIPS](https://img.shields.io/badge/NeurIPS-2024-68448B.svg)](https://openreview.net/forum?id=00Sx577BT3)
 [![HuggingFace](https://img.shields.io/badge/Hugging%20Face-kontinua-FFD21E.svg)](https://huggingface.co/kontinua)
@@ -137,6 +137,6 @@ Kontinua is built on the 15TB *The Well* benchmark published at NeurIPS 2024 by 
 ## 📄 License & Community
 
 * **Open-Source Core**: Licensed under the [Apache-2.0 License](LICENSE).
-* **Documentation**: [docs.kontinua.ai](https://docs.kontinua.ai)
-* **Cloud Platform**: [kontinua.ai](https://kontinua.ai)
+* **Documentation**: [docs.kontinua-ai.com](https://docs.kontinua-ai.com)
+* **Cloud Platform**: [kontinua-ai.com](https://kontinua-ai.com)
 * **Community**: Join our [Discord](https://discord.gg/kontinua) or [GitHub Discussions](https://github.com/KontinuaAI/kontinua/discussions).
