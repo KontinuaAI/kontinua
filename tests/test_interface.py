@@ -1,7 +1,7 @@
 import torch
 
-from the_well.data.datasets import WellMetadata
-from the_well.utils.interface import Interface
+from kontinua.data.datasets import WellMetadata
+from kontinua.utils.interface import Interface
 
 
 class FakeModel(torch.nn.Module):

@@ -175,10 +175,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--source",
-        default="/mnt/home/polymathic/ceph/the_well/testing_before_adding/earthswe",
+        default="/mnt/home/polymathic/ceph/kontinua/testing_before_adding/earthswe",
     )
     parser.add_argument(
-        "--dest", default="/mnt/home/polymathic/ceph/the_well/datasets/planetswe/data"
+        "--dest", default="/mnt/home/polymathic/ceph/kontinua/datasets/planetswe/data"
     )
     parser.add_argument("--index", default="0")
     args = parser.parse_args()

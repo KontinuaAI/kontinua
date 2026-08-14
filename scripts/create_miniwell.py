@@ -2,8 +2,8 @@
 
 import argparse
 
-from the_well.data.datasets import WellDataset
-from the_well.data.miniwell import create_mini_well
+from kontinua.data.datasets import WellDataset
+from kontinua.data.miniwell import create_mini_well
 
 
 def main():
@@ -21,7 +21,7 @@ def main():
     parser.add_argument(
         "--dataset-path",
         type=str,
-        default="/mnt/ceph/users/polymathic/the_well/datasets",
+        default="/mnt/ceph/users/polymathic/kontinua/datasets",
         help="Path to the dataset.",
     )
     parser.add_argument(

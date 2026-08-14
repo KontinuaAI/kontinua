@@ -1,7 +1,7 @@
 import torch
 
-from the_well.benchmark.metrics.spatial import MSE, NMSE, NRMSE, RMSE, VMSE, VRMSE
-from the_well.data.datasets import WellMetadata
+from kontinua.benchmark.metrics.spatial import MSE, NMSE, NRMSE, RMSE, VMSE, VRMSE
+from kontinua.data.datasets import WellMetadata
 
 
 def test_distance_to_itself():

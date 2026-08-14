@@ -2,7 +2,7 @@ from copy import deepcopy
 
 import torch
 
-from the_well.data.augmentation import (
+from kontinua.data.augmentation import (
     RandomAxisFlip,
     RandomAxisPermute,
     RandomAxisRoll,

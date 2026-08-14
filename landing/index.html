@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kontinua — Physics AI Surrogate Modeling Platform</title>
-  <meta name="description" content="Replace expensive HPC simulations with AI predictions 1000× faster. Kontinua is the multi-physics surrogate modeling platform built on 15TB of NeurIPS-published simulation data." />
-  <meta property="og:title" content="Kontinua — Physics AI Surrogate Modeling Platform" />
-  <meta property="og:description" content="Replace expensive HPC simulations with AI predictions 1000× faster." />
+  <title>Kontinua — Open-Core Physics AI Platform</title>
+  <meta name="description" content="The open-source foundation for physics AI. Train and run neural PDE surrogates 1,000× faster than traditional HPC solvers with PyTorch, or deploy instantly at scale on Kontinua Cloud." />
+  <meta property="og:title" content="Kontinua — Open-Core Physics AI Platform" />
+  <meta property="og:description" content="Open-source neural operators & physics transformers. Deploy 1,000× faster PDE surrogates on local hardware or managed Triton GPU cloud." />
   <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kontinua — Open-Core Physics AI Platform" />
+  <meta name="twitter:description" content="Open-source neural operators & physics transformers. Deploy 1,000× faster PDE surrogates on local hardware or managed Triton GPU cloud." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -21,16 +24,24 @@
       <a href="#" class="nav__logo" id="nav-logo">
         <span class="nav__logo-icon">⬡</span>
         Kontinua
+        <span class="nav__badge">Open-Core</span>
       </a>
       <ul class="nav__links" id="nav-links">
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#models">Models</a></li>
+        <li><a href="#quickstart">Quickstart</a></li>
+        <li><a href="#simulation">Playground</a></li>
+        <li><a href="#models">Model Zoo</a></li>
+        <li><a href="#matrix">OSS vs Cloud</a></li>
+        <li><a href="#calculator">ROI Calculator</a></li>
         <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#benchmark">Benchmark</a></li>
+        <li><a href="#benchmark">Leaderboard</a></li>
       </ul>
       <div class="nav__cta">
-        <a href="#pricing" class="btn btn--ghost" id="nav-signin">Sign In</a>
-        <a href="#waitlist" class="btn btn--primary" id="nav-cta">Get Early Access</a>
+        <a href="https://github.com/KontinuaAI/kontinua" target="_blank" rel="noopener" class="btn btn--github" id="nav-github">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          Star
+          <span class="btn__star-count" id="nav-star-count">1.4k</span>
+        </a>
+        <a href="#waitlist" class="btn btn--primary" id="nav-cta">Deploy Cloud</a>
       </div>
     </div>
   </nav>
@@ -44,34 +55,47 @@
     <div class="hero__content">
       <div class="hero__badge" id="hero-badge">
         <span class="hero__badge-dot"></span>
-        NeurIPS 2024 · 15TB Multi-Physics Corpus · BSD Licensed
+        <span>Apache 2.0 Open Source Core · 15TB NeurIPS Physics Corpus · Triton Cloud API</span>
       </div>
 
       <h1 class="hero__headline" id="hero-headline">
-        Replace HPC Simulations<br />
-        with AI. <em>1000× Faster.</em>
+        The Open-Source Foundation<br />
+        for Physics AI. <em>1,000× Faster.</em>
       </h1>
 
       <p class="hero__subline" id="hero-subline">
-        Kontinua is the first multi-physics surrogate modeling platform trained on the largest
-        open physics dataset ever assembled. Upload boundary conditions. Get predictions in milliseconds.
-        Trusted architectures — FNO, CNextU-Net, AViT — deployed at scale.
+        Kontinua combines state-of-the-art neural PDE operators (FNO, CNextU-Net, AViT) with 
+        a managed low-latency GPU cloud. Train locally on your hardware with Apache 2.0 open-source code, 
+        or scale to millisecond multi-physics inference with Kontinua Cloud.
       </p>
 
+      <!-- Install Bar -->
+      <div class="hero__install-bar" id="hero-install-bar">
+        <div class="install-pill">
+          <span class="install-pill__prefix">$</span>
+          <code class="install-pill__code" id="install-cmd">pip install kontinua</code>
+          <button class="install-pill__copy" id="copy-install-btn" title="Copy to clipboard" aria-label="Copy install command">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span class="install-pill__copied" id="copy-tooltip">Copied!</span>
+          </button>
+        </div>
+      </div>
+
       <div class="hero__actions" id="hero-actions">
-        <a href="#waitlist" class="btn btn--primary btn--lg" id="hero-cta-primary">
-          Get Early Access
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <a href="https://github.com/KontinuaAI/kontinua" target="_blank" rel="noopener" class="btn btn--github btn--lg" id="hero-github-cta">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          Explore on GitHub
         </a>
-        <a href="#how-it-works" class="btn btn--ghost btn--lg" id="hero-cta-secondary">
-          See How It Works
+        <a href="#waitlist" class="btn btn--primary btn--lg" id="hero-cta-primary">
+          Join Cloud Early Access
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
 
       <div class="hero__stats" id="hero-stats">
         <div class="stat">
           <span class="stat__value" data-count="15">0</span><span class="stat__unit">TB</span>
-          <span class="stat__label">Training Data</span>
+          <span class="stat__label">Open Training Corpus</span>
         </div>
         <div class="stat__divider" aria-hidden="true"></div>
         <div class="stat">
@@ -81,12 +105,12 @@
         <div class="stat__divider" aria-hidden="true"></div>
         <div class="stat">
           <span class="stat__value" data-count="1000">0</span><span class="stat__unit">×</span>
-          <span class="stat__label">Faster than HPC</span>
+          <span class="stat__label">Faster than Traditional Solvers</span>
         </div>
         <div class="stat__divider" aria-hidden="true"></div>
         <div class="stat">
           <span class="stat__value" data-count="8">0</span>
-          <span class="stat__label">Model Architectures</span>
+          <span class="stat__label">Open Neural Architectures</span>
         </div>
       </div>
     </div>
@@ -97,9 +121,9 @@
   </section>
 
   <!-- ══════════════════════════════ LOGOS / SOCIAL PROOF ══════════════════════ -->
-  <section class="logos" aria-label="Research affiliations">
+  <section class="logos" aria-label="Research and Open Source Partners">
     <div class="container">
-      <p class="logos__label">Built on research from</p>
+      <p class="logos__label">Built on peer-reviewed research & open science from</p>
       <div class="logos__track">
         <span class="logos__item">Flatiron Institute</span>
         <span class="logos__sep" aria-hidden="true">·</span>
@@ -120,73 +144,144 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════ HOW IT WORKS ══════════════════════════════ -->
-  <section class="section how" id="how-it-works">
+  <!-- ═══════════════════════════════ QUICKSTART / DEV EXPERIENCE ═════════════════ -->
+  <section class="section quickstart" id="quickstart">
     <div class="container">
       <div class="section__header reveal">
-        <span class="section__tag">How It Works</span>
-        <h2 class="section__title">From boundary conditions<br />to prediction in 3 steps</h2>
-        <p class="section__sub">No HPC cluster. No weeks of compute. No PhDs required.</p>
+        <span class="section__tag">Developer Experience</span>
+        <h2 class="section__title">From local PyTorch experiment<br />to production Cloud API in seconds</h2>
+        <p class="section__sub">Open-source first. Use our Python package locally with full freedom, or connect to our managed cloud for sub-50ms inference.</p>
       </div>
 
-      <div class="steps">
-        <div class="step reveal" style="--delay: 0ms">
-          <div class="step__number">01</div>
-          <div class="step__icon" aria-hidden="true">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="10" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/><rect x="18" y="4" width="10" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/><rect x="4" y="18" width="10" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M23 18v10M18 23h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h3 class="step__title">Upload Your Conditions</h3>
-          <p class="step__desc">Upload initial states, boundary conditions, or geometry parameters in HDF5, NetCDF, VTK, or OpenFOAM format. Our pipeline normalises and validates automatically.</p>
-        </div>
-
-        <div class="step__connector" aria-hidden="true"></div>
-
-        <div class="step reveal" style="--delay: 100ms">
-          <div class="step__number">02</div>
-          <div class="step__icon" aria-hidden="true">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M10 16c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M16 12v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <h3 class="step__title">Select Physics Domain</h3>
-          <p class="step__desc">Choose from 16 pre-trained physics domains — turbulence, CFD, MHD, acoustic scattering, reaction-diffusion, astrophysics. Our model router selects the optimal architecture for your problem.</p>
-        </div>
-
-        <div class="step__connector" aria-hidden="true"></div>
-
-        <div class="step reveal" style="--delay: 200ms">
-          <div class="step__number">03</div>
-          <div class="step__icon" aria-hidden="true">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M6 26L14 10l6 10 4-6 6 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="10" r="2" fill="currentColor"/><circle cx="20" cy="20" r="2" fill="currentColor"/></svg>
-          </div>
-          <h3 class="step__title">Get Predictions</h3>
-          <p class="step__desc">Receive spatiotemporal field predictions with VRMSE, spectral MSE, and Wasserstein metrics in milliseconds. Export rollout videos, xarray datasets, or raw tensors.</p>
-        </div>
-      </div>
-
-      <!-- Code Demo -->
-      <div class="code-demo reveal">
-        <div class="code-demo__header">
-          <div class="code-demo__dots" aria-hidden="true">
+      <div class="code-box reveal">
+        <div class="code-box__nav">
+          <div class="code-box__dots" aria-hidden="true">
             <span></span><span></span><span></span>
           </div>
-          <span class="code-demo__title">Python SDK · 5 lines to your first prediction</span>
+          <div class="code-box__tabs" role="tablist">
+            <button class="code-tab active" role="tab" aria-selected="true" data-tab="tab-python">Python SDK (Open Source)</button>
+            <button class="code-tab" role="tab" aria-selected="false" data-tab="tab-cloud">Kontinua Cloud API (REST/gRPC)</button>
+            <button class="code-tab" role="tab" aria-selected="false" data-tab="tab-cli">Kontinua CLI</button>
+          </div>
+          <button class="code-box__copy" id="copy-active-code" title="Copy code snippet">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>Copy</span>
+          </button>
         </div>
-        <pre class="code-demo__body"><code><span class="tok-kw">import</span> kontinua
 
-<span class="tok-comment"># Authenticate with your API key</span>
-client = kontinua.Client(<span class="tok-str">api_key</span>=<span class="tok-val">"ko_live_..."</span>)
+        <!-- Tab 1: Python SDK Local -->
+        <div class="code-panel active" id="tab-python" role="tabpanel">
+          <pre><code><span class="tok-comment"># 1. Install open-source package: pip install kontinua</span>
+<span class="tok-kw">import</span> torch
+<span class="tok-kw">from</span> kontinua.core.models <span class="tok-kw">import</span> CNextUNet
+<span class="tok-kw">from</span> kontinua.core.data <span class="tok-kw">import</span> WellDataset
 
-<span class="tok-comment"># Upload boundary conditions + get prediction</span>
-result = client.predict(
-    domain=<span class="tok-val">"turbulence"</span>,
-    input_path=<span class="tok-val">"./initial_state.hdf5"</span>,
-    model=<span class="tok-val">"cnext-unet-v2"</span>,       <span class="tok-comment"># top-performing architecture</span>
+<span class="tok-comment"># 2. Load pre-trained neural surrogate from Hugging Face Hub</span>
+model = CNextUNet.from_pretrained(<span class="tok-val">"kontinua/cnext-unet-turbulence-2d"</span>)
+model.eval()
+
+<span class="tok-comment"># 3. Load initial spatiotemporal boundary state</span>
+dataset = WellDataset(well_base_path=<span class="tok-val">"./data"</span>, well_dataset_name=<span class="tok-val">"turbulence"</span>)
+sample = dataset[<span class="tok-num">0</span>][<span class="tok-val">"input"</span>].unsqueeze(<span class="tok-num">0</span>)
+
+<span class="tok-comment"># 4. Generate 100-step rollout in 47 milliseconds on local GPU</span>
+<span class="tok-kw">with</span> torch.no_grad():
+    prediction = model(sample)
+
+<span class="tok-kw">print</span>(<span class="tok-str">f"Output shape: </span>{prediction.shape}<span class="tok-str"> | VRMSE: 0.021"</span>)</code></pre>
+        </div>
+
+        <!-- Tab 2: Cloud API -->
+        <div class="code-panel" id="tab-cloud" role="tabpanel">
+          <pre><code><span class="tok-comment"># Query Kontinua Cloud Managed Triton GPU Cluster (FastAPI / gRPC)</span>
+<span class="tok-kw">import</span> kontinua
+
+client = kontinua.Client(api_key=<span class="tok-val">"ko_live_9f82d1..."</span>)
+
+<span class="tok-comment"># Send boundary condition -> Receive validated rollout in 35ms</span>
+prediction = client.predict(
+    domain=<span class="tok-val">"compressible_euler"</span>,
+    mesh_input=<span class="tok-val">"./wing_geometry.h5"</span>,
+    model=<span class="tok-val">"cnext-unet-v2-trt"</span>,      <span class="tok-comment"># TensorRT accelerated</span>
     rollout_steps=<span class="tok-num">100</span>,
+    return_metrics=<span class="tok-kw">True</span>
 )
 
-<span class="tok-comment"># Access predictions with full metrics</span>
-<span class="tok-kw">print</span>(result.vrmse)          <span class="tok-comment"># 0.023</span>
-<span class="tok-kw">print</span>(result.latency_ms)     <span class="tok-comment"># 47ms</span>
-result.export(<span class="tok-val">"./output.hdf5"</span>)</code></pre>
+<span class="tok-kw">print</span>(<span class="tok-str">f"Inference Latency: </span>{prediction.latency_ms}<span class="tok-str">ms | VRMSE: </span>{prediction.vrmse}<span class="tok-str">"</span>)
+prediction.export_openfoam(<span class="tok-val">"./postProcessing/"</span>)</code></pre>
+        </div>
+
+        <!-- Tab 3: CLI -->
+        <div class="code-panel" id="tab-cli" role="tabpanel">
+          <pre><code><span class="tok-comment"># 1. Download 2D turbulence training split from The Well</span>
+$ kontinua download --dataset turbulence --split train --output ./data
+
+<span class="tok-comment"># 2. Train Fourier Neural Operator (FNO) with Distributed Data Parallel (DDP)</span>
+$ kontinua train experiment=fno data=turbulence model.modes=32 training.batch_size=64
+
+<span class="tok-comment"># 3. Benchmark local checkpoint against standardized test suite</span>
+$ kontinua benchmark --checkpoint ./runs/fno_best.pt --dataset turbulence --metrics vrmse,spectral_mse
+
+<span class="tok-comment"># 4. Compile model to TensorRT engine for sub-30ms production serving</span>
+$ kontinua export --model cnext_unet --format tensorrt --fp16 --output ./engine.plan</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ SIMULATION PLAYGROUND ══════════════════════ -->
+  <section class="section simulation" id="simulation">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__tag">Interactive Rollout</span>
+        <h2 class="section__title">High-fidelity PDE surrogates.<br />Real-time visual comparison.</h2>
+        <p class="section__sub">See the difference: 48 hours of traditional Navier-Stokes HPC computation vs. 47 milliseconds with Kontinua CNextU-Net surrogate.</p>
+      </div>
+
+      <div class="sim-card reveal">
+        <div class="sim-card__header">
+          <div class="sim-card__meta">
+            <span class="sim-pill sim-pill--active">Compressible Turbulence · 2D Vorticity Field ($\omega$)</span>
+            <span class="sim-pill">Resolution: 512×512</span>
+            <span class="sim-pill sim-pill--gold">VRMSE: 0.021 (SOTA)</span>
+          </div>
+          <div class="sim-card__controls">
+            <button class="btn btn--ghost btn--sm" id="sim-play-toggle">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" id="sim-play-icon"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              <span id="sim-play-text">Pause Rollout</span>
+            </button>
+            <button class="btn btn--ghost btn--sm" id="sim-reset-btn">Reset Step</button>
+          </div>
+        </div>
+
+        <div class="sim-display">
+          <div class="sim-view">
+            <div class="sim-view__tag sim-view__tag--hpc">Traditional HPC Solver (Navier-Stokes)</div>
+            <canvas class="sim-canvas" id="canvasHPC" width="500" height="280"></canvas>
+            <div class="sim-view__footer">
+              <span>Compute Time: <strong>48.2 Hours</strong></span>
+              <span>Cost: <strong>$145.00 (64 CPU cores)</strong></span>
+            </div>
+          </div>
+
+          <div class="sim-divider" aria-hidden="true">
+            <span class="sim-divider__vs">VS</span>
+          </div>
+
+          <div class="sim-view sim-view--ai">
+            <div class="sim-view__tag sim-view__tag--ai">Kontinua Neural Surrogate (CNextU-Net)</div>
+            <canvas class="sim-canvas" id="canvasAI" width="500" height="280"></canvas>
+            <div class="sim-view__footer">
+              <span>Inference Time: <strong class="tok-best">47 Milliseconds</strong></span>
+              <span>Cost: <strong class="tok-best">$0.01 / prediction</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-timeline">
+          <label for="sim-scrubber" class="sim-timeline__label">Rollout Timeline: <span id="sim-step-val">Step t=42 / 100</span></label>
+          <input type="range" min="0" max="100" value="42" class="sim-scrubber" id="sim-scrubber" />
+        </div>
       </div>
     </div>
   </section>
@@ -195,28 +290,29 @@ result.export(<span class="tok-val">"./output.hdf5"</span>)</code></pre>
   <section class="section models" id="models">
     <div class="container">
       <div class="section__header reveal">
-        <span class="section__tag">Model Zoo</span>
-        <h2 class="section__title">8 production-ready architectures,<br />intelligently routed</h2>
-        <p class="section__sub">Every model is fine-tuned on domain-specific data from The Well's 15TB corpus and benchmarked with spatial, spectral, and temporal metrics.</p>
+        <span class="section__tag">Open Model Zoo</span>
+        <h2 class="section__title">8 battle-tested neural operator<br />& transformer architectures</h2>
+        <p class="section__sub">Every architecture is fully open-sourced in PyTorch under Apache 2.0. Base weights freely downloadable from Hugging Face Hub.</p>
       </div>
 
       <div class="model-grid">
         <div class="model-card reveal" style="--delay:0ms">
-          <div class="model-card__badge model-card__badge--top">Best Overall</div>
+          <div class="model-card__badge model-card__badge--top">Top Performer</div>
           <div class="model-card__icon" aria-hidden="true">🏆</div>
           <h3 class="model-card__name">CNextU-Net</h3>
-          <p class="model-card__type">Modernized U-Net + ConvNext</p>
+          <p class="model-card__type">Modernized U-Net + ConvNeXt Blocks</p>
           <div class="model-card__metrics">
             <div class="model-metric">
               <span class="model-metric__label">VRMSE</span>
               <span class="model-metric__value model-metric__value--best">0.021</span>
             </div>
             <div class="model-metric">
-              <span class="model-metric__label">Latency</span>
+              <span class="model-metric__label">Triton Latency</span>
               <span class="model-metric__value">47ms</span>
             </div>
           </div>
-          <div class="model-card__domains">Turbulence · CFD · Active Matter</div>
+          <div class="model-card__domains">Turbulence · Compressible Euler · Active Matter</div>
+          <a href="https://huggingface.co/kontinua" target="_blank" rel="noopener" class="model-card__link">Download Weights →</a>
         </div>
 
         <div class="model-card reveal" style="--delay:60ms">
@@ -229,11 +325,12 @@ result.export(<span class="tok-val">"./output.hdf5"</span>)</code></pre>
               <span class="model-metric__value">0.034</span>
             </div>
             <div class="model-metric">
-              <span class="model-metric__label">Latency</span>
+              <span class="model-metric__label">Triton Latency</span>
               <span class="model-metric__value">31ms</span>
             </div>
           </div>
-          <div class="model-card__domains">Helmholtz · MHD · Euler</div>
+          <div class="model-card__domains">Helmholtz · MHD · Shallow Water</div>
+          <a href="https://huggingface.co/kontinua" target="_blank" rel="noopener" class="model-card__link">Download Weights →</a>
         </div>
 
         <div class="model-card reveal" style="--delay:120ms">
@@ -246,11 +343,12 @@ result.export(<span class="tok-val">"./output.hdf5"</span>)</code></pre>
               <span class="model-metric__value">0.029</span>
             </div>
             <div class="model-metric">
-              <span class="model-metric__label">Latency</span>
+              <span class="model-metric__label">Triton Latency</span>
               <span class="model-metric__value">28ms</span>
             </div>
           </div>
-          <div class="model-card__domains">Shear Flow · Rayleigh-Bénard</div>
+          <div class="model-card__domains">Shear Flow · Rayleigh-Bénard Convection</div>
+          <a href="https://huggingface.co/kontinua" target="_blank" rel="noopener" class="model-card__link">Download Weights →</a>
         </div>
 
         <div class="model-card reveal" style="--delay:180ms">
@@ -263,28 +361,30 @@ result.export(<span class="tok-val">"./output.hdf5"</span>)</code></pre>
               <span class="model-metric__value">0.026</span>
             </div>
             <div class="model-metric">
-              <span class="model-metric__label">Latency</span>
+              <span class="model-metric__label">Triton Latency</span>
               <span class="model-metric__value">89ms</span>
             </div>
           </div>
-          <div class="model-card__domains">Supernova · Neutron Star</div>
+          <div class="model-card__domains">Supernova · Neutron Star Mergers</div>
+          <a href="https://huggingface.co/kontinua" target="_blank" rel="noopener" class="model-card__link">Download Weights →</a>
         </div>
 
         <div class="model-card reveal" style="--delay:240ms">
           <div class="model-card__icon" aria-hidden="true">🔁</div>
           <h3 class="model-card__name">AFNO</h3>
-          <p class="model-card__type">Adaptive FNO</p>
+          <p class="model-card__type">Adaptive Fourier Neural Operator</p>
           <div class="model-card__metrics">
             <div class="model-metric">
               <span class="model-metric__label">VRMSE</span>
               <span class="model-metric__value">0.031</span>
             </div>
             <div class="model-metric">
-              <span class="model-metric__label">Latency</span>
+              <span class="model-metric__label">Triton Latency</span>
               <span class="model-metric__value">35ms</span>
             </div>
           </div>
-          <div class="model-card__domains">Viscoelastic · Convective</div>
+          <div class="model-card__domains">Viscoelastic Instabilities · Convective</div>
+          <a href="https://huggingface.co/kontinua" target="_blank" rel="noopener" class="model-card__link">Download Weights →</a>
         </div>
 
         <div class="model-card reveal" style="--delay:300ms">
@@ -297,68 +397,145 @@ result.export(<span class="tok-val">"./output.hdf5"</span>)</code></pre>
               <span class="model-metric__value">0.038</span>
             </div>
             <div class="model-metric">
-              <span class="model-metric__label">Latency</span>
+              <span class="model-metric__label">Triton Latency</span>
               <span class="model-metric__value">22ms</span>
             </div>
           </div>
-          <div class="model-card__domains">Acoustic · Gray-Scott</div>
+          <div class="model-card__domains">Acoustic Scattering · Gray-Scott</div>
+          <a href="https://huggingface.co/kontinua" target="_blank" rel="noopener" class="model-card__link">Download Weights →</a>
         </div>
-      </div>
-
-      <div class="model-cta reveal">
-        <a href="#waitlist" class="btn btn--primary" id="models-cta">Access Full Model Zoo →</a>
-        <a href="#benchmark" class="btn btn--ghost" id="models-bench">View Benchmark Results</a>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════ DOMAINS ═══════════════════════════════ -->
-  <section class="section domains" id="domains">
+  <!-- ═══════════════════════════════ MATRIX: OSS vs CLOUD ═══════════════════════ -->
+  <section class="section matrix" id="matrix">
     <div class="container">
       <div class="section__header reveal">
-        <span class="section__tag">Physics Coverage</span>
-        <h2 class="section__title">16 physics domains.<br />One unified API.</h2>
+        <span class="section__tag">Architecture Boundary</span>
+        <h2 class="section__title">Open-Source Core vs. Kontinua Cloud</h2>
+        <p class="section__sub">Zero lock-in. Use the open-source library on your own infrastructure forever, or deploy on Kontinua Cloud when your team needs automated multi-GPU scale.</p>
       </div>
 
-      <div class="domain-tags reveal">
-        <span class="domain-tag">Turbulent Radiative Layers</span>
-        <span class="domain-tag domain-tag--highlight">Compressible Turbulence</span>
-        <span class="domain-tag">Rayleigh-Bénard Convection</span>
-        <span class="domain-tag">Magneto-Hydrodynamics</span>
-        <span class="domain-tag domain-tag--highlight">Euler Equations</span>
-        <span class="domain-tag">Helmholtz Scattering</span>
-        <span class="domain-tag">Active Biological Matter</span>
-        <span class="domain-tag">Shear Flow</span>
-        <span class="domain-tag domain-tag--highlight">Supernova Explosion</span>
-        <span class="domain-tag">Neutron Star Merger</span>
-        <span class="domain-tag">Viscoelastic Instability</span>
-        <span class="domain-tag">Gray-Scott Reaction-Diffusion</span>
-        <span class="domain-tag domain-tag--highlight">Rayleigh-Taylor Instability</span>
-        <span class="domain-tag">Acoustic Scattering</span>
-        <span class="domain-tag">Convective Stellar Envelopes</span>
-        <span class="domain-tag">Shallow Water (Planetary)</span>
+      <div class="matrix-table-wrap reveal">
+        <table class="matrix-table" role="table">
+          <thead>
+            <tr>
+              <th scope="col">Capability</th>
+              <th scope="col" class="matrix-table__col-oss">Kontinua Open-Source (Community)</th>
+              <th scope="col" class="matrix-table__col-cloud">Kontinua Cloud (Managed Platform)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>License & Governance</strong></td>
+              <td><span class="badge-tag badge-tag--green">Apache 2.0 (Free Forever)</span></td>
+              <td><span class="badge-tag badge-tag--blue">Commercial SaaS & Enterprise</span></td>
+            </tr>
+            <tr>
+              <td><strong>Execution Environment</strong></td>
+              <td>Local CPU / Workstation / Custom Cluster</td>
+              <td>Auto-Scaling H100/L4 Triton GPU Fleet</td>
+            </tr>
+            <tr>
+              <td><strong>8 Open Model Architectures</strong></td>
+              <td><span class="check-icon">✓</span> Full PyTorch code included</td>
+              <td><span class="check-icon">✓</span> Pre-compiled TensorRT engines</td>
+            </tr>
+            <tr>
+              <td><strong>Pre-Trained 2D Base Checkpoints</strong></td>
+              <td><span class="check-icon">✓</span> Download from Hugging Face Hub</td>
+              <td><span class="check-icon">✓</span> Instant zero-setup API access</td>
+            </tr>
+            <tr>
+              <td><strong>3D High-Res Foundation Checkpoints</strong></td>
+              <td>Manual training required</td>
+              <td><span class="check-icon">✓</span> Included in Pro & Team tiers</td>
+            </tr>
+            <tr>
+              <td><strong>Sub-50ms Low-Latency Inference API</strong></td>
+              <td>Self-managed server configuration</td>
+              <td><span class="check-icon">✓</span> Global REST & gRPC API with SLA</td>
+            </tr>
+            <tr>
+              <td><strong>Managed Domain Fine-Tuning</strong></td>
+              <td>Manual PyTorch DDP scripts</td>
+              <td><span class="check-icon">✓</span> 1-Click Upload → Auto-Trained Endpoint</td>
+            </tr>
+            <tr>
+              <td><strong>Benchmark-as-a-Service (BaaS)</strong></td>
+              <td>Local benchmark harness</td>
+              <td><span class="check-icon">✓</span> Automated CI/CD simulation tests</td>
+            </tr>
+            <tr>
+              <td><strong>SSO/SAML, Team RBAC & SOC 2</strong></td>
+              <td>Not included</td>
+              <td><span class="check-icon">✓</span> Enterprise Security & Compliance</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ ROI CALCULATOR ═════════════════════════════ -->
+  <section class="section calculator" id="calculator">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__tag">HPC Economics</span>
+        <h2 class="section__title">Calculate your simulation cost savings</h2>
+        <p class="section__sub">See how much time and compute spend your engineering team saves by augmenting OpenFOAM or Ansys Fluent with Kontinua surrogates.</p>
       </div>
 
-      <div class="use-cases">
-        <div class="use-case reveal" style="--delay:0ms">
-          <div class="use-case__icon" aria-hidden="true">✈️</div>
-          <h3>Aerospace</h3>
-          <p>Replace Ansys Fluent CFD runs with millisecond surrogate predictions for aerodynamic design exploration. Cut simulation campaigns from weeks to hours.</p>
+      <div class="calc-box reveal">
+        <div class="calc-inputs">
+          <div class="calc-group">
+            <div class="calc-label-row">
+              <label for="calc-sims" class="calc-label">Monthly Simulation Runs</label>
+              <span class="calc-val" id="calc-sims-val">250 runs</span>
+            </div>
+            <input type="range" min="10" max="2000" step="10" value="250" class="calc-slider" id="calc-sims" />
+          </div>
+
+          <div class="calc-group">
+            <div class="calc-label-row">
+              <label for="calc-hours" class="calc-label">Average Traditional Solver Time per Run</label>
+              <span class="calc-val" id="calc-hours-val">12 hours</span>
+            </div>
+            <input type="range" min="1" max="72" step="1" value="12" class="calc-slider" id="calc-hours" />
+          </div>
+
+          <div class="calc-group">
+            <div class="calc-label-row">
+              <label for="calc-engineers" class="calc-label">Number of CAE / CFD Engineers</label>
+              <span class="calc-val" id="calc-engineers-val">6 engineers</span>
+            </div>
+            <input type="range" min="1" max="50" step="1" value="6" class="calc-slider" id="calc-engineers" />
+          </div>
         </div>
-        <div class="use-case reveal" style="--delay:100ms">
-          <div class="use-case__icon" aria-hidden="true">⚡</div>
-          <h3>Energy</h3>
-          <p>Model turbulent combustion, plasma containment, and MHD dynamics for nuclear and fusion research without allocating HPC clusters.</p>
-        </div>
-        <div class="use-case reveal" style="--delay:200ms">
-          <div class="use-case__icon" aria-hidden="true">🏭</div>
-          <h3>Manufacturing</h3>
-          <p>Integrate real-time surrogate predictions into digital twin platforms. Connect via WebSocket streaming API to Siemens MindSphere or AWS IoT TwinMaker.</p>
-        </div>
-        <div class="use-case reveal" style="--delay:300ms">
-          <div class="use-case__icon" aria-hidden="true">🔬</div>
-          <h3>Research</h3>
-          <p>Run and evaluate surrogate models against the NeurIPS benchmark suite. Submit to the public leaderboard and compare against 8 architectures across 16 datasets.</p>
+
+        <div class="calc-results">
+          <div class="calc-metric">
+            <span class="calc-metric__title">Annual Traditional HPC Compute Cost</span>
+            <span class="calc-metric__number calc-metric__number--old" id="res-old-cost">$108,000</span>
+          </div>
+
+          <div class="calc-metric">
+            <span class="calc-metric__title">Annual Cost with Kontinua Cloud</span>
+            <span class="calc-metric__number calc-metric__number--new" id="res-new-cost">$3,588</span>
+          </div>
+
+          <div class="calc-divider"></div>
+
+          <div class="calc-metric calc-metric--highlight">
+            <span class="calc-metric__title">Estimated Net Annual Savings</span>
+            <span class="calc-metric__number calc-metric__number--save" id="res-savings">$104,412 / year (96.7%)</span>
+          </div>
+
+          <div class="calc-metric">
+            <span class="calc-metric__title">Engineering Wall-Clock Time Saved</span>
+            <span class="calc-metric__number calc-metric__number--time" id="res-time-saved">2,998 Hours / month</span>
+          </div>
         </div>
       </div>
     </div>
@@ -368,64 +545,67 @@ result.export(<span class="tok-val">"./output.hdf5"</span>)</code></pre>
   <section class="section pricing" id="pricing">
     <div class="container">
       <div class="section__header reveal">
-        <span class="section__tag">Pricing</span>
-        <h2 class="section__title">Start free. Scale as you grow.</h2>
-        <p class="section__sub">Usage-based pricing that scales with your workload. No upfront costs, no seat licenses.</p>
+        <span class="section__tag">Open-Core Pricing</span>
+        <h2 class="section__title">Transparent pricing for engineers & enterprises</h2>
+        <p class="section__sub">Start for free with open source. Upgrade to Kontinua Cloud when your team needs auto-scaling GPU infrastructure.</p>
       </div>
 
       <div class="pricing-grid">
-        <!-- Free -->
-        <div class="pricing-card reveal" style="--delay:0ms" id="plan-free">
-          <div class="pricing-card__tier">Free</div>
+        <!-- Community OSS -->
+        <div class="pricing-card reveal" style="--delay:0ms" id="plan-community">
+          <div class="pricing-card__badge pricing-card__badge--oss">Open Source</div>
+          <div class="pricing-card__tier">Community</div>
           <div class="pricing-card__price">
             <span class="pricing-card__amount">$0</span>
-            <span class="pricing-card__period">/month</span>
+            <span class="pricing-card__period">/forever</span>
           </div>
-          <p class="pricing-card__desc">Explore the platform, run experiments, validate your use case.</p>
+          <p class="pricing-card__desc">For individual researchers and engineers running on local hardware.</p>
           <ul class="pricing-card__features">
-            <li><span class="check" aria-hidden="true">✓</span> 100 predictions/month</li>
-            <li><span class="check" aria-hidden="true">✓</span> 2D physics domains</li>
-            <li><span class="check" aria-hidden="true">✓</span> Public model zoo access</li>
-            <li><span class="check" aria-hidden="true">✓</span> Community support</li>
+            <li><span class="check" aria-hidden="true">✓</span> Apache 2.0 license</li>
+            <li><span class="check" aria-hidden="true">✓</span> Unlimited local CPU/GPU execution</li>
+            <li><span class="check" aria-hidden="true">✓</span> 8 PyTorch neural architectures</li>
+            <li><span class="check" aria-hidden="true">✓</span> The Well 15TB data loaders</li>
+            <li><span class="check" aria-hidden="true">✓</span> Standard spatial/spectral metrics</li>
+            <li><span class="check" aria-hidden="true">✓</span> GitHub community support</li>
           </ul>
-          <a href="#waitlist" class="btn btn--ghost btn--full" id="cta-free">Get Started Free</a>
+          <a href="https://github.com/KontinuaAI/kontinua" target="_blank" rel="noopener" class="btn btn--ghost btn--full" id="cta-community">View on GitHub</a>
         </div>
 
-        <!-- Pro -->
+        <!-- Pro Cloud -->
         <div class="pricing-card pricing-card--featured reveal" style="--delay:80ms" id="plan-pro">
           <div class="pricing-card__badge">Most Popular</div>
-          <div class="pricing-card__tier">Pro</div>
+          <div class="pricing-card__tier">Pro Cloud</div>
           <div class="pricing-card__price">
-            <span class="pricing-card__amount">$299</span>
+            <span class="pricing-card__amount">$149</span>
             <span class="pricing-card__period">/month</span>
           </div>
-          <p class="pricing-card__desc">For engineers and research teams building with physics AI.</p>
+          <p class="pricing-card__desc">For engineers integrating fast surrogate predictions into active design loops.</p>
           <ul class="pricing-card__features">
-            <li><span class="check" aria-hidden="true">✓</span> 10,000 predictions/month</li>
-            <li><span class="check" aria-hidden="true">✓</span> All 16 physics domains</li>
-            <li><span class="check" aria-hidden="true">✓</span> API access + Python SDK</li>
-            <li><span class="check" aria-hidden="true">✓</span> Custom fine-tuning (1 domain)</li>
+            <li><span class="check" aria-hidden="true">✓</span> 5,000 cloud predictions / month</li>
+            <li><span class="check" aria-hidden="true">✓</span> Sub-50ms Triton GPU endpoints</li>
+            <li><span class="check" aria-hidden="true">✓</span> All 16 physics domains accessible</li>
+            <li><span class="check" aria-hidden="true">✓</span> Python SDK & REST/gRPC API</li>
+            <li><span class="check" aria-hidden="true">✓</span> ONNX & TensorRT cloud export</li>
             <li><span class="check" aria-hidden="true">✓</span> Email support (24hr SLA)</li>
-            <li><span class="check" aria-hidden="true">✓</span> ONNX/TensorRT export</li>
           </ul>
           <a href="#waitlist" class="btn btn--primary btn--full" id="cta-pro">Start Pro Trial</a>
         </div>
 
-        <!-- Team -->
+        <!-- Team Cloud -->
         <div class="pricing-card reveal" style="--delay:160ms" id="plan-team">
-          <div class="pricing-card__tier">Team</div>
+          <div class="pricing-card__tier">Team Cloud</div>
           <div class="pricing-card__price">
-            <span class="pricing-card__amount">$999</span>
+            <span class="pricing-card__amount">$499</span>
             <span class="pricing-card__period">/month</span>
           </div>
-          <p class="pricing-card__desc">For simulation teams running production workloads.</p>
+          <p class="pricing-card__desc">For simulation teams requiring managed fine-tuning & batch jobs.</p>
           <ul class="pricing-card__features">
-            <li><span class="check" aria-hidden="true">✓</span> 100,000 predictions/month</li>
+            <li><span class="check" aria-hidden="true">✓</span> 50,000 cloud predictions / month</li>
             <li><span class="check" aria-hidden="true">✓</span> 5 team seats + RBAC</li>
-            <li><span class="check" aria-hidden="true">✓</span> Rollout predictions (multi-step)</li>
-            <li><span class="check" aria-hidden="true">✓</span> 3 fine-tuned domains</li>
+            <li><span class="check" aria-hidden="true">✓</span> 1 Managed Fine-Tuning run / mo</li>
+            <li><span class="check" aria-hidden="true">✓</span> High-throughput batch simulation API</li>
+            <li><span class="check" aria-hidden="true">✓</span> Multi-step rollout predictions</li>
             <li><span class="check" aria-hidden="true">✓</span> Priority support (4hr SLA)</li>
-            <li><span class="check" aria-hidden="true">✓</span> Batch prediction API</li>
           </ul>
           <a href="#waitlist" class="btn btn--ghost btn--full" id="cta-team">Start Team Trial</a>
         </div>
@@ -436,36 +616,37 @@ result.export(<span class="tok-val">"./output.hdf5"</span>)</code></pre>
           <div class="pricing-card__price">
             <span class="pricing-card__amount">Custom</span>
           </div>
-          <p class="pricing-card__desc">Dedicated infrastructure, custom model development, and compliance.</p>
+          <p class="pricing-card__desc">Dedicated GPU clusters, on-premise air-gapped deployment, custom loss functions.</p>
           <ul class="pricing-card__features">
-            <li><span class="check" aria-hidden="true">✓</span> Unlimited predictions</li>
-            <li><span class="check" aria-hidden="true">✓</span> Dedicated GPU cluster</li>
-            <li><span class="check" aria-hidden="true">✓</span> On-prem deployment option</li>
-            <li><span class="check" aria-hidden="true">✓</span> SSO/SAML + SOC 2</li>
-            <li><span class="check" aria-hidden="true">✓</span> 24/7 support + Slack</li>
-            <li><span class="check" aria-hidden="true">✓</span> 99.95% uptime SLA</li>
+            <li><span class="check" aria-hidden="true">✓</span> Unlimited predictions & batch jobs</li>
+            <li><span class="check" aria-hidden="true">✓</span> Dedicated H100 GPU cluster</li>
+            <li><span class="check" aria-hidden="true">✓</span> On-premise / VPC air-gapped deployment</li>
+            <li><span class="check" aria-hidden="true">✓</span> Custom neural architecture formulation</li>
+            <li><span class="check" aria-hidden="true">✓</span> SSO/SAML + SOC 2 Type II audit</li>
+            <li><span class="check" aria-hidden="true">✓</span> 24/7 dedicated Slack & 99.95% SLA</li>
           </ul>
-          <a href="mailto:enterprise@kontinua.ai" class="btn btn--ghost btn--full" id="cta-enterprise">Contact Sales</a>
+          <a href="mailto:enterprise@kontinua.ai" class="btn btn--ghost btn--full" id="cta-enterprise">Contact Enterprise Sales</a>
         </div>
       </div>
 
+      <!-- Add-ons -->
       <div class="pricing-overage reveal">
-        <h3>Pay-as-you-go add-ons</h3>
+        <h3>Managed Compute & Pay-As-You-Go Add-Ons</h3>
         <div class="overage-grid">
           <div class="overage-item">
-            <span class="overage-item__label">Standard prediction (2D ≤256²)</span>
+            <span class="overage-item__label">Standard 2D API Call ($\le 256^2$)</span>
             <span class="overage-item__price">$0.01 / call</span>
           </div>
           <div class="overage-item">
-            <span class="overage-item__label">Premium prediction (3D or >256²)</span>
+            <span class="overage-item__label">3D High-Res Prediction</span>
             <span class="overage-item__price">$0.05 / call</span>
           </div>
           <div class="overage-item">
-            <span class="overage-item__label">Fine-tuning compute</span>
+            <span class="overage-item__label">Managed Fine-Tuning Compute (H100)</span>
             <span class="overage-item__price">$4.00 / GPU-hour</span>
           </div>
           <div class="overage-item">
-            <span class="overage-item__label">Batch jobs</span>
+            <span class="overage-item__label">Batch Simulation Jobs</span>
             <span class="overage-item__price">$8.00 / 1K calls</span>
           </div>
         </div>
@@ -473,69 +654,82 @@ result.export(<span class="tok-val">"./output.hdf5"</span>)</code></pre>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════ BENCHMARK ══════════════════════════════ -->
+  <!-- ══════════════════════════════════ BENCHMARK LEADERBOARD ═════════════════ -->
   <section class="section benchmark" id="benchmark">
     <div class="container">
       <div class="section__header reveal">
-        <span class="section__tag">Benchmarking</span>
-        <h2 class="section__title">The MLPerf for Physics AI</h2>
-        <p class="section__sub">Free public leaderboard. Submit your model, get comprehensive spatial, spectral, and temporal evaluation against all 16 datasets.</p>
+        <span class="section__tag">Open Benchmarking</span>
+        <h2 class="section__title">The standard evaluation suite for Physics AI</h2>
+        <p class="section__sub">Standardized spatial (VRMSE), spectral (Fourier MSE), and temporal (Wasserstein-1) metrics across all 16 datasets.</p>
       </div>
 
       <div class="bench-table-wrap reveal">
         <div class="bench-table-header">
-          <span>Leaderboard · Turbulence Domain</span>
-          <a href="#waitlist" class="btn btn--ghost btn--sm" id="bench-submit">Submit Your Model</a>
+          <span>Turbulence Domain Leaderboard</span>
+          <a href="https://github.com/KontinuaAI/kontinua" target="_blank" rel="noopener" class="btn btn--ghost btn--sm" id="bench-submit">Submit Model PR</a>
         </div>
         <div class="bench-table" role="table" aria-label="Model benchmark results">
           <div class="bench-row bench-row--head" role="row">
-            <span role="columnheader">#</span>
-            <span role="columnheader">Model</span>
+            <span role="columnheader">Rank</span>
+            <span role="columnheader">Model Architecture</span>
             <span role="columnheader">VRMSE ↓</span>
             <span role="columnheader">Spectral MSE ↓</span>
-            <span role="columnheader">Latency (p95)</span>
+            <span role="columnheader">Triton p95 Latency</span>
+            <span role="columnheader">Weights</span>
           </div>
           <div class="bench-row bench-row--gold" role="row">
-            <span role="cell">1</span>
-            <span role="cell">CNextU-Net v2 <span class="bench-badge">Kontinua</span></span>
+            <span role="cell">🥇 #1</span>
+            <span role="cell">CNextU-Net v2 <span class="bench-badge">Kontinua SOTA</span></span>
             <span role="cell" class="bench-best">0.021</span>
             <span role="cell" class="bench-best">0.0043</span>
             <span role="cell">47ms</span>
+            <span role="cell"><span class="badge-pill">Apache 2.0</span></span>
           </div>
           <div class="bench-row" role="row">
-            <span role="cell">2</span>
+            <span role="cell">🥈 #2</span>
             <span role="cell">AViT-Large</span>
             <span role="cell">0.026</span>
             <span role="cell">0.0061</span>
             <span role="cell">89ms</span>
+            <span role="cell"><span class="badge-pill">Apache 2.0</span></span>
           </div>
           <div class="bench-row" role="row">
-            <span role="cell">3</span>
+            <span role="cell">🥉 #3</span>
             <span role="cell">TFNO-v3</span>
             <span role="cell">0.029</span>
             <span role="cell">0.0074</span>
             <span role="cell">28ms</span>
+            <span role="cell"><span class="badge-pill">Apache 2.0</span></span>
           </div>
           <div class="bench-row" role="row">
-            <span role="cell">4</span>
-            <span role="cell">FNO (baseline)</span>
+            <span role="cell">#4</span>
+            <span role="cell">AFNO-2D</span>
+            <span role="cell">0.031</span>
+            <span role="cell">0.0082</span>
+            <span role="cell">35ms</span>
+            <span role="cell"><span class="badge-pill">Apache 2.0</span></span>
+          </div>
+          <div class="bench-row" role="row">
+            <span role="cell">#5</span>
+            <span role="cell">FNO Baseline (NeurIPS 2024)</span>
             <span role="cell">0.034</span>
             <span role="cell">0.0091</span>
             <span role="cell">31ms</span>
+            <span role="cell"><span class="badge-pill">Apache 2.0</span></span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════ WAITLIST ══════════════════════════════ -->
+  <!-- ═══════════════════════════════════ WAITLIST / CLOUD ACCESS ═══════════════ -->
   <section class="section waitlist" id="waitlist">
     <div class="waitlist__glow" aria-hidden="true"></div>
     <div class="container">
       <div class="waitlist__inner reveal">
-        <span class="section__tag">Early Access</span>
-        <h2 class="waitlist__title">Be first to forge the future<br />of physics simulation.</h2>
-        <p class="waitlist__sub">Join the waitlist. Get 3 months of Pro free when we launch. Limited to 200 early-access seats.</p>
+        <span class="section__tag">Cloud Early Access</span>
+        <h2 class="waitlist__title">Deploy scientific ML with zero infrastructure friction.</h2>
+        <p class="waitlist__sub">Join our managed Cloud Early Access program. Get 3 months of Pro Cloud free upon general availability. Limited to 200 pilot seats.</p>
 
         <form class="waitlist__form" id="waitlist-form" novalidate>
           <div class="waitlist__fields">
@@ -544,7 +738,7 @@ result.export(<span class="tok-val">"./output.hdf5"</span>)</code></pre>
               id="waitlist-email"
               name="email"
               class="waitlist__input"
-              placeholder="your@company.com"
+              placeholder="work.email@company.com"
               autocomplete="email"
               required
               aria-label="Work email address"
@@ -553,25 +747,26 @@ result.export(<span class="tok-val">"./output.hdf5"</span>)</code></pre>
               id="waitlist-vertical"
               name="vertical"
               class="waitlist__input waitlist__select"
-              aria-label="Your industry"
+              aria-label="Your industry vertical"
+              required
             >
-              <option value="" disabled selected>Your Industry</option>
-              <option value="aerospace">Aerospace / Defense</option>
-              <option value="energy">Energy / Oil & Gas</option>
-              <option value="automotive">Automotive</option>
-              <option value="manufacturing">Manufacturing</option>
-              <option value="research">Academic Research</option>
-              <option value="biotech">Biotech / Pharma</option>
+              <option value="" disabled selected>Select Your Industry</option>
+              <option value="aerospace">Aerospace & Defense</option>
+              <option value="energy">Energy & Fusion / Oil & Gas</option>
+              <option value="automotive">Automotive & Mobility</option>
+              <option value="manufacturing">Industrial & Manufacturing</option>
+              <option value="research">Academic / National Lab Research</option>
+              <option value="biotech">Biomedical / Active Matter</option>
               <option value="other">Other</option>
             </select>
             <button type="submit" class="btn btn--primary btn--lg" id="waitlist-submit">
-              Request Access
+              Request Cloud Access
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
           </div>
-          <p class="waitlist__form-note">No credit card required. We'll reach out within 48 hours.</p>
+          <p class="waitlist__form-note">No credit card required. Includes $100 in free GPU inference credits.</p>
           <div class="waitlist__success" id="waitlist-success" role="alert" aria-live="polite" hidden>
-            🎉 You're on the list! We'll be in touch within 48 hours.
+            🎉 You're on the priority cloud access list! We'll send your API credentials within 24 hours.
           </div>
         </form>
       </div>
@@ -586,39 +781,40 @@ result.export(<span class="tok-val">"./output.hdf5"</span>)</code></pre>
           <a href="#" class="nav__logo" aria-label="Kontinua home">
             <span class="nav__logo-icon">⬡</span> Kontinua
           </a>
-          <p>The multi-physics AI surrogate modeling platform.<br />Built on the largest open physics dataset ever assembled.</p>
-          <p class="footer__cite">Trained on data from: <em>Ohana et al., NeurIPS 2024</em></p>
+          <p>The open-core physics AI platform.<br />Empowering engineers with neural PDE surrogates 1,000× faster than HPC.</p>
+          <p class="footer__cite">Built on peer-reviewed research: <em>Ohana et al., NeurIPS 2024</em></p>
         </div>
         <div class="footer__links">
           <div class="footer__col">
-            <h4>Product</h4>
-            <a href="#how-it-works">How It Works</a>
-            <a href="#models">Model Zoo</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#benchmark">Benchmark</a>
+            <h4>Open Source</h4>
+            <a href="https://github.com/KontinuaAI/kontinua" target="_blank" rel="noopener">GitHub Repository</a>
+            <a href="https://pypi.org/project/kontinua/" target="_blank" rel="noopener">PyPI Package</a>
+            <a href="https://huggingface.co/kontinua" target="_blank" rel="noopener">Hugging Face Weights</a>
+            <a href="#benchmark">Leaderboard</a>
           </div>
           <div class="footer__col">
-            <h4>Developers</h4>
-            <a href="#">Documentation</a>
-            <a href="#">Python SDK</a>
-            <a href="#">API Reference</a>
-            <a href="#">GitHub</a>
+            <h4>Kontinua Cloud</h4>
+            <a href="#quickstart">Quickstart</a>
+            <a href="#simulation">Playground</a>
+            <a href="#matrix">OSS vs Cloud</a>
+            <a href="#pricing">Cloud Pricing</a>
+            <a href="#waitlist">Request API Key</a>
           </div>
           <div class="footer__col">
-            <h4>Company</h4>
-            <a href="#">About</a>
-            <a href="#">Blog</a>
-            <a href="mailto:enterprise@kontinua.ai">Enterprise</a>
-            <a href="mailto:hello@kontinua.ai">Contact</a>
+            <h4>Company & Research</h4>
+            <a href="https://arxiv.org/abs/2412.00568" target="_blank" rel="noopener">NeurIPS Paper</a>
+            <a href="mailto:enterprise@kontinua.ai">Enterprise Inquiries</a>
+            <a href="mailto:hello@kontinua.ai">Contact Founder</a>
+            <a href="https://discord.gg/kontinua" target="_blank" rel="noopener">Community Discord</a>
           </div>
         </div>
       </div>
       <div class="footer__bottom">
-        <p>© 2026 Kontinua. Built with data from <a href="https://github.com/PolymathicAI/the_well" target="_blank" rel="noopener">The Well</a> (BSD-3 License).</p>
+        <p>© 2026 Kontinua AI. Open-source core licensed under Apache 2.0. Built with data from <a href="https://github.com/PolymathicAI/the_well" target="_blank" rel="noopener">The Well</a>.</p>
         <div class="footer__legal">
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-          <a href="#">Security</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Security & Compliance</a>
         </div>
       </div>
     </div>

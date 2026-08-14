@@ -5,19 +5,19 @@ import numpy as np
 import pytest
 import torch
 
-from the_well.data.augmentation import (
+from kontinua.data.augmentation import (
     Compose,
     RandomAxisFlip,
     RandomAxisPermute,
     RandomAxisRoll,
 )
-from the_well.data.datasets import DeltaWellDataset, WellDataset, WellMetadata
-from the_well.data.normalization import RMSNormalization, ZScoreNormalization
-from the_well.data.utils import (
+from kontinua.data.datasets import DeltaWellDataset, WellDataset, WellMetadata
+from kontinua.data.normalization import RMSNormalization, ZScoreNormalization
+from kontinua.data.utils import (
     maximum_stride_for_initial_index,
     raw_steps_to_possible_sample_t0s,
 )
-from the_well.utils.dummy_data import write_dummy_data
+from kontinua.utils.dummy_data import write_dummy_data
 
 
 def test_metadata():

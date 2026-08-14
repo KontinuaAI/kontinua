@@ -1,7 +1,7 @@
 import pytest
 import torch
 
-from the_well.benchmark.models import UNetClassic, UNetConvNext
+from kontinua.benchmark.models import UNetClassic, UNetConvNext
 
 
 @pytest.mark.parametrize("dim_in", [1, 3, 5])

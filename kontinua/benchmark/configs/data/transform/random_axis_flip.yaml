@@ -1,0 +1,2 @@
+_target_: kontinua.data.augmentation.RandomAxisFlip
+p: 0.5

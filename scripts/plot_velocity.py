@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from tqdm import tqdm
 
-from the_well.data.utils import WELL_DATASETS
+from kontinua.data.utils import WELL_DATASETS
 
 
 def plot_velocity(dataset_dir: str, output_dir: str):

@@ -1,7 +1,7 @@
 import pytest
 from huggingface_hub import PyTorchModelHubMixin
 
-from the_well.benchmark.models import FNO, TFNO, UNetClassic, UNetConvNext
+from kontinua.benchmark.models import FNO, TFNO, UNetClassic, UNetConvNext
 
 
 @pytest.mark.parametrize("model_cls", [FNO, TFNO, UNetClassic, UNetConvNext])

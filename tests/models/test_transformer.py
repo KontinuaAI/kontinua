@@ -1,7 +1,7 @@
 import pytest
 import torch
 
-from the_well.benchmark.models import AViT
+from kontinua.benchmark.models import AViT
 
 
 @pytest.mark.parametrize("dim_in", [1, 3, 5])

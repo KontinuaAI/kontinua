@@ -1,0 +1,2 @@
+_target_: kontinua.data.augmentation.RandomAxisPermute
+p: 1.0

@@ -178,9 +178,9 @@ def create_plotter() -> pv.Plotter:
 
 
 st.set_page_config(
-    page_title="Tap into the Well", page_icon="assets/the_well_color_icon.svg"
+    page_title="Tap into the Well", page_icon="assets/kontinua_color_icon.svg"
 )
-st.image("assets/the_well_logo.png")
+st.image("assets/kontinua_logo.png")
 st.markdown("""
     [The Well](https://arxiv.org/abs/2412.00568) is a collection of 15TB datasets of physics simulations.
 
@@ -192,7 +192,7 @@ st.markdown("""
 
     For field corresponding of higher tensor order (e.g. velocity) loading the data may be slow.
     For this reason, we recommend downloading the data to work on the Well.
-    Check the [documentation](polymathic-ai.org/the_well) for more information.
+    Check the [documentation](polymathic-ai.org/kontinua) for more information.
 
 """)
 # The order of the following widget matters

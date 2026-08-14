@@ -1,8 +1,8 @@
 import pytest
 from torch.utils.data import DataLoader
 
-from the_well.data import DeltaWellDataset, WellDataset
-from the_well.data.normalization import RMSNormalization, ZScoreNormalization
+from kontinua.data import DeltaWellDataset, WellDataset
+from kontinua.data.normalization import RMSNormalization, ZScoreNormalization
 
 
 @pytest.mark.parametrize(

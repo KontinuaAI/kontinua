@@ -23,7 +23,7 @@ The reported results are here to provide a simple baseline. **They should not be
 To load the {{ model_name }} model trained on the `{{ dataset }}` of the Well, use the following commands.
 
 ```python
-from the_well.benchmark.models import {{ model_name }}
+from kontinua.benchmark.models import {{ model_name }}
 
 model = {{ model_name }}.from_pretrained("polymathic-ai/{{ model_name }}-{{ dataset }}")
 ```

@@ -22,7 +22,7 @@ This Dataset is part of [The Well Collection](https://huggingface.co/papers/2412
 2. Use the `WellDataModule` to retrieve data as follows:
 
 ```python
-from the_well.data import WellDataModule
+from kontinua.data import WellDataModule
 
 # The following line may take a couple of minutes to instantiate the datamodule
 datamodule = WellDataModule(

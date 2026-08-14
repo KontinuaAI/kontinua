@@ -1,6 +1,6 @@
 import pytest
 
-from the_well.utils.download import well_download
+from kontinua.utils.download import well_download
 
 
 @pytest.fixture(

@@ -2,7 +2,7 @@ import math
 
 import torch
 
-from the_well.data.normalization import RMSNormalization, ZScoreNormalization
+from kontinua.data.normalization import RMSNormalization, ZScoreNormalization
 
 
 def test_zscore_normalization():

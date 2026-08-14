@@ -1,0 +1,2 @@
+_target_: kontinua.benchmark.optim.schedulers.LinearWarmupCosineAnnealingLR
+warmup_epochs: 5

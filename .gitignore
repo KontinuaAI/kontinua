@@ -102,3 +102,8 @@ check_well_data_4059043.out
 
 # Ignore streamlit local runs
 .streamlit/
+
+# Ignore marketing and business documents
+landing/
+Kontinua_Implementation_Plan.md
+Kontinua_Solo_Founder_Playbook.md

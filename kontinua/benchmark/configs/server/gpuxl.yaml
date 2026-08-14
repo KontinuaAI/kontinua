@@ -1,0 +1,4 @@
+# @package _global_
+data:
+  well_base_path: "/mnt/gpuxl/polymathic/kontinua/datasets/"
+experiment_dir: "experiments/"

@@ -1,0 +1,2 @@
+_target_: kontinua.data.augmentation.RandomRotation90
+p: 1.0

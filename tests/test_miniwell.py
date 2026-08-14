@@ -6,8 +6,8 @@ import tempfile
 
 import pytest
 
-from the_well.data.datasets import WellDataset
-from the_well.data.miniwell import create_mini_well
+from kontinua.data.datasets import WellDataset
+from kontinua.data.miniwell import create_mini_well
 
 WELL_BASE_PATH = os.environ.get("WELL_BASE_PATH")
 CHECK_THEWELL_DATA_SCRIPT = os.path.join(

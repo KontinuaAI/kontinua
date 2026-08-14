@@ -20,7 +20,7 @@ def mp_wrapper(
     discontinuous,
     inclusions,
     maze,
-    output_dir="/mnt/home/polymathic/ceph/the_well/testing_before_adding/clawpack_data/acoustics_2d_variable/",
+    output_dir="/mnt/home/polymathic/ceph/kontinua/testing_before_adding/clawpack_data/acoustics_2d_variable/",
 ):
     if discontinuous:
         run_func = partial(
@@ -153,7 +153,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--raw_output_dir",
         type=str,
-        default=" /mnt/home/polymathic/ceph/the_well/testing_before_adding/clawpack_data/",
+        default=" /mnt/home/polymathic/ceph/kontinua/testing_before_adding/clawpack_data/",
         help="Directory to store raw output",
     )
     args = parser.parse_args()

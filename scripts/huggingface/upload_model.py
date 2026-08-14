@@ -8,11 +8,11 @@ from huggingface_hub import PyTorchModelHubMixin
 from hydra.utils import instantiate
 from omegaconf import DictConfig
 
-from the_well.data import WellDataModule
+from kontinua.data import WellDataModule
 
-logger = logging.getLogger("the_well")
+logger = logging.getLogger("kontinua")
 
-CONFIG_DIR = (pathlib.Path(__file__) / "../../../the_well/benchmark/configs").resolve(
+CONFIG_DIR = (pathlib.Path(__file__) / "../../../kontinua/benchmark/configs").resolve(
     strict=True
 )
 CONFIG_NAME = "model_upload"

@@ -200,7 +200,7 @@ if __name__ == "__main__":
     parser.add_argument("--ic_dir", default="../data_stubs/")
     parser.add_argument(
         "--output_dir",
-        default="/mnt/home/polymathic/ceph/the_well/testing_before_adding/earthswe/",
+        default="/mnt/home/polymathic/ceph/kontinua/testing_before_adding/earthswe/",
     )
     args = parser.parse_args()
 

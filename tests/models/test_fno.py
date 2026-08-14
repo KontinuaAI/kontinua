@@ -3,7 +3,7 @@ import torch
 from hydra.utils import instantiate
 from omegaconf import OmegaConf
 
-from the_well.benchmark.models import (
+from kontinua.benchmark.models import (
     AFNO,
     FNO,
     TFNO,
@@ -59,7 +59,7 @@ def test_afno(dim_in, dim_out, n_spatial_dims, spatial_resolution):
 
 
 def test_load_fno_conf():
-    FNO_CONFIG_FILE = "the_well/benchmark/configs/model/fno.yaml"
+    FNO_CONFIG_FILE = "kontinua/benchmark/configs/model/fno.yaml"
     config = OmegaConf.load(FNO_CONFIG_FILE)
     n_spatial_dims = 2
     spatial_resolution = [32, 32]

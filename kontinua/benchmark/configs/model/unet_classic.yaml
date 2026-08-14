@@ -1,0 +1,2 @@
+_target_: kontinua.benchmark.models.UNetClassic
+init_features: 48

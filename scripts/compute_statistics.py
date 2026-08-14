@@ -7,8 +7,8 @@ import h5py as h5
 import torch
 import yaml
 
-from the_well.data.datasets import WellDataset
-from the_well.data.utils import WELL_DATASETS
+from kontinua.data.datasets import WellDataset
+from kontinua.data.utils import WELL_DATASETS
 
 
 # Custom representer for scientific notation
@@ -148,10 +148,10 @@ def compute_statistics(train_path: str, stats_path: str):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser("Compute the Well dataset statistics")
-    parser.add_argument("the_well_dir", type=str)
+    parser.add_argument("kontinua_dir", type=str)
     parser.add_argument("-n", type=int, default=1, help="Number of processes")
     args = parser.parse_args()
-    data_dir = args.the_well_dir
+    data_dir = args.kontinua_dir
     n_processes = args.n
 
     with mp.Pool(n_processes) as pool:
