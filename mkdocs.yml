@@ -28,9 +28,8 @@ theme:
     - navigation.instant.prefetch
     - search.suggest
     - toc.follow
-  logo: material/hexagon-outline
-  favicon: material/hexagon-outline
   icon:
+    logo: material/hexagon-outline
     repo: fontawesome/brands/github
 
 nav:
