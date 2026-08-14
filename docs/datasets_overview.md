@@ -1,12 +1,14 @@
-# Overview of the Dataset Collection
+# Kontinua Physical Domains
 
-The Well is composed of 16 datasets totaling 15TB of data with individual datasets ranging from 6.9GB to 5.1TB.
-The data is provided on uniform grids and sampled at constant time intervals.
-Data and associated metadata are stored in self-documenting `HDF5` and metadata `dataset_name.yaml` files. All datasets use a shared data specification described in [api.md#data-format].
-These files include all available state variables or spatially varying coefficients associated with a given set of dynamics in `numpy` arrays of shape `(n_traj, n_steps, coord1, coord2, (coord3))` in single precision `fp32`.
-We distinguish between scalar (`t0_fields`), vector (`t1_fields`), and tensor-valued fields (`t2_fields`) due to their different transformation properties.
-Each file is randomly split into training/testing/validation sets with a respective split of 0.8/0.1/0.1 * `n_traj`.
-Details of individual datasets are given in the following table:
+Kontinua provides seamless access to 16 diverse physical domains totaling 15TB of curated training data. Individual datasets range from 6.9GB to 5.1TB.
+
+The data is provided on uniform grids and sampled at constant time intervals, ensuring that it is directly ingestible by machine learning architectures. Data and associated metadata are stored in self-documenting `HDF5` and metadata `dataset_name.yaml` files. All domains use a shared data specification described in the [Data Format](./data_format.md) guide.
+
+These files include all available state variables or spatially varying coefficients associated with a given set of dynamics in `numpy` arrays of shape `(n_traj, n_steps, coord1, coord2, (coord3))` in single precision `fp32`. We distinguish between scalar (`t0_fields`), vector (`t1_fields`), and tensor-valued fields (`t2_fields`) due to their different transformation properties.
+
+Each dataset is randomly split into training/testing/validation sets with a respective split of 0.8/0.1/0.1 * `n_traj`.
+
+### Supported Physical Domains
 
 | Dataset                       | CS             | Resolution (pixels)         | n_steps | n_traj |
 |-------------------------------|----------------|-----------------------------|---------|--------|
@@ -30,7 +32,9 @@ Details of individual datasets are given in the following table:
 | `viscoelastic_instability_v2` | Cartesian 2D   | 512 × 512                   | variable| 260    |
 
 
-**Table:** *Dataset description, coordinate system (CS), resolution of snapshots, n_steps (number of time-steps per trajectory), and n_traj (total number of trajectories in the dataset).*
+**Table:** *Domain description, coordinate system (CS), resolution of snapshots, n_steps (number of time-steps per trajectory), and n_traj (total number of trajectories in the dataset).*
+
+### Generation Characteristics
 
 | Dataset                    | Size (GB) | Run time (h) | Hardware        | Software                        |
 |----------------------------|-----------|--------------|-----------------|---------------------------------|
@@ -57,4 +61,4 @@ Details of individual datasets are given in the following table:
 | `viscoelastic_instability` | 66        | 34*         | 64 C            | Dedalus                      |
 | `viscoelastic_instability_v2` | 66     | 34*         | 64 C            | Dedalus                      |
 
-**Table:** *Information about the different dataset generation. In the running time and hardware columns, * denotes a total for all the runs. Otherwise, these figures are given for running one simulation only. For hardware, C denotes the number of Cores. Computation was performed on nodes equipped with either 2 48-core AMD Genoa or 2 32-core Intel Icelake.*
+**Table:** *Information about the simulation software and hardware used to generate the data.*

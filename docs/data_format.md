@@ -1,6 +1,6 @@
 # Data format
 
-The raw data of the Well are stored as [HDF5 files](https://www.hdfgroup.org/solutions/hdf5/), internally organized following a shared specification. The data stored in these files have been generated on uniform grids and sampled at constant time intervals. These
+The raw simulation data of the Kontinua Physical Domains are stored as [HDF5 files](https://www.hdfgroup.org/solutions/hdf5/), internally organized following a shared specification. The data stored in these files have been generated on uniform grids and sampled at constant time intervals. These
 files include all available state variables or spatially varying coefficients associated with a given set of
 dynamics in numpy arrays of shape (`n_traj`, `n_steps`, `coord1`, `coord2`, `(coord3)`) in
 single precision fp32. We distinguish between scalar, vector, and tensor-valued fields due to their different

@@ -21,6 +21,7 @@ nav:
   - Home: index.md
   - Tutorial:
     - Interface: tutorials/dataset.ipynb
+  - Kontinua Cloud: cloud_overview.md
   - Datasets:
     - Overview: datasets_overview.md
     - acoustic_scattering_discontinuous: datasets/acoustic_scattering_discontinuous.md
@@ -92,6 +93,6 @@ plugins:
       handlers:
         python:
           paths:
-            kontinua/
+            - kontinua/
           options:
             docstring_style: google
